@@ -80,7 +80,7 @@ double reb_tools_energy(const struct reb_simulation* const r){
     double e_kin = 0.;
     double e_pot = 0.;
     int N_interact = (r->testparticle_type==0)?_N_active:(N-N_var);
-    print(N_interact)
+    print(N_interact)；
     for (int i=0;i<N_interact;i++){
         struct reb_particle pi = particles[i];
         e_kin += 0.5 * pi.m * (pi.vx*pi.vx + pi.vy*pi.vy + pi.vz*pi.vz);
