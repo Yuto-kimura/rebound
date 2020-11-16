@@ -96,7 +96,8 @@ double reb_tools_energy(const struct reb_simulation* const r){
         }
     }
     
-    return e_kin + e_pot + r->energy_offset;
+//     return e_kin + e_pot + r->energy_offset;
+      return N;
 }
 
 struct reb_vec3d reb_tools_angular_momentum(const struct reb_simulation* const r){
