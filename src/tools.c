@@ -71,12 +71,16 @@ double reb_random_rayleigh(double sigma){
 /// Other helper routines
 double reb_tools_energy(const struct reb_simulation* const r){
     const int N = r->N;
+    print(N);
     const int N_var = r->N_var;
+    print(N_var);
     const int _N_active = ((r->N_active==-1)?N:r->N_active) - N_var;
+    print(_N_active);
     const struct reb_particle* restrict const particles = r->particles;
     double e_kin = 0.;
     double e_pot = 0.;
     int N_interact = (r->testparticle_type==0)?_N_active:(N-N_var);
+    print(N_interact)
     for (int i=0;i<N_interact;i++){
         struct reb_particle pi = particles[i];
         e_kin += 0.5 * pi.m * (pi.vx*pi.vx + pi.vy*pi.vy + pi.vz*pi.vz);
